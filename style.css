@@ -23,7 +23,7 @@ body {
     border-bottom: 4px solid var(--vitamex-gold);
 }
 
-.vitamex-logo-bg me-3 {
+.vitamex-logo-bg {
     width: 75px;  /* Ancho fijo */
     height: 75px; /* Alto fijo para asegurar el círculo */
     
