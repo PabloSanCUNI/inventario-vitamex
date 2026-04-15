@@ -23,25 +23,16 @@ body {
     border-bottom: 4px solid var(--vitamex-gold);
 }
 
-.vitamex-logo-bg {
-    width: 75px;  /* Ancho fijo */
-    height: 75px; /* Alto fijo para asegurar el círculo */
-    
-    /* Carga de la imagen */
-    background-image: url('https://ibb.co/gFt8MV7b'); 
-    
-    /* Propiedades de centrado */
-    background-size: contain;      /* Escala la imagen para que quepa sin cortarse */
-    background-position: center;   /* La centra horizontal y verticalmente */
-    background-repeat: no-repeat;  /* Evita que se duplique */
-    background-color: white;       /* Fondo blanco para que resalte el logo */
-    
-    /* Estética circular */
+.vitamex-logo-header {
+    height: 70px;
+    width: 70px; /* Aseguramos que el ancho sea igual al alto */
+    aspect-ratio: 1 / 1; /* Garantiza que siempre sea un cuadrado */
+    object-fit: contain; /* Centra la imagen dentro del círculo sin deformarla */
     border: 2px solid var(--vitamex-gold);
     border-radius: 50%;
-    
-    /* Sombra para darle profundidad */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    background-color: white;
+    display: block; /* Evita espacios extra debajo de la imagen */
+    padding: 5px; /* Opcional: añade espacio entre el logo y el borde dorado */
 }
 
 .text-gold {
