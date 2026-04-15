@@ -28,7 +28,7 @@ body {
     height: 75px; /* Alto fijo para asegurar el círculo */
     
     /* Carga de la imagen */
-    background-image: url('logo.jpg'); 
+    background-image: url('https://ibb.co/gFt8MV7b'); 
     
     /* Propiedades de centrado */
     background-size: contain;      /* Escala la imagen para que quepa sin cortarse */
