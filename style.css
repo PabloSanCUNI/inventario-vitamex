@@ -37,6 +37,7 @@ body {
 
 .text-gold {
     color: var(--vitamex-gold) !important;
+    font-size: 14px;
     font-weight: 500;
 }
 
