@@ -24,15 +24,15 @@ body {
 }
 
 .vitamex-logo-header {
-    height: 150px;
-    width: 150px; /* Aseguramos que el ancho sea igual al alto */
+    height: 120px;
+    width: 120px; /* Aseguramos que el ancho sea igual al alto */
     aspect-ratio: 1 / 1; /* Garantiza que siempre sea un cuadrado */
     object-fit: cover; /* Centra la imagen dentro del círculo sin deformarla */
     border: 2px solid var(--vitamex-gold);
     border-radius: 50%;
     background-color: white;
     display: block; /* Evita espacios extra debajo de la imagen */
-    padding: 5px; /* Opcional: añade espacio entre el logo y el borde dorado */
+    padding: 2px; /* Añade espacio entre el logo y el borde dorado */
 }
 
 .text-gold {
