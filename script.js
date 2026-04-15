@@ -6,6 +6,7 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbwnjuYm2rQkiyngtW2z94eh
  */
 window.onload = function() {
     cargarCatalogoProductos();
+    cargarCatalogoResponsables();
     cargarInventario();
 };
 
@@ -30,6 +31,31 @@ async function cargarCatalogoProductos() {
         select.innerHTML = '<option>Error al cargar catálogo</option>';
     }
 }
+
+/**
+ * Obtiene el catálogo de empleados desde la pestaña Catalogo_Responsables
+ */
+async function cargarCatalogoResponsables() {
+    const select = document.getElementById('responsable');
+    try {
+        // Pedimos la pestaña de responsables a la API
+        const response = await fetch(`${API_URL}?sheet=Catalogo_Responsables`);
+        const personal = await response.json();
+        
+        select.innerHTML = '<option value="">Seleccione responsable...</option>';
+        personal.forEach(p => {
+            let opt = document.createElement('option');
+            // Guardamos el nombre o ID según lo que necesites en la BD
+            opt.value = `${p.ID_Empleado} - ${p.Nombre_Empleado}`; 
+            opt.text = `${p.ID_Empleado} - ${p.Nombre_Empleado}`;
+            select.add(opt);
+        });
+    } catch (error) {
+        console.error("Error en catálogo de responsables:", error);
+        select.innerHTML = '<option value="">Error al cargar personal</option>';
+    }
+}
+
 
 /**
  * Obtiene y renderiza el inventario actual
