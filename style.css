@@ -16,7 +16,7 @@ body {
     background-color: var(--vitamex-light-bg);
     background-repeat: repeat; 
     background-attachment: fixed; 
-    background-size: 10%;
+    background-size: 2%;
     font-family: 'Poppins', Arial, sans-serif;
     color: var(--vitamex-text);
 }
