@@ -6,6 +6,7 @@ const API_URL = 'https://script.google.com/macros/s/AKfycbwnjuYm2rQkiyngtW2z94eh
  */
 window.onload = function() {
     cargarCatalogoProductos();
+    cargarCatalogoDepartamentos();
     cargarCatalogoResponsables();
     cargarInventario();
 };
@@ -29,6 +30,29 @@ async function cargarCatalogoProductos() {
     } catch (error) {
         console.error("Error en catálogo:", error);
         select.innerHTML = '<option>Error al cargar catálogo</option>';
+    }
+}
+
+/**
+ * Obtiene la lista de áreas desde la pestaña Catalogo_Departamentos
+ */
+async function cargarCatalogoDepartamentos() {
+    const select = document.getElementById('departamento');
+    try {
+        const response = await fetch(`${API_URL}?sheet=Catalogo_Departamentos`);
+        const departamentos = await response.json();
+        
+        select.innerHTML = '<option value="">Seleccione área...</option>';
+        departamentos.forEach(d => {
+            let opt = document.createElement('option');
+            // Usamos el nombre de la columna definida en Sheets
+            opt.value = d.Nombre_Departamento; 
+            opt.text = d.Nombre_Departamento;
+            select.add(opt);
+        });
+    } catch (error) {
+        console.error("Error en catálogo de departamentos:", error);
+        select.innerHTML = '<option value="">Error al cargar áreas</option>';
     }
 }
 
